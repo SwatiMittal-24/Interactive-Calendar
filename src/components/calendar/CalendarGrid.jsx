@@ -14,7 +14,7 @@ export default function CalendarGrid({
   const days = generateCalendar(currentMonth);
 
   return (
-    <div key={`grid-${currentMonth.toISOString()}`} className="overflow-hidden rounded-[1.5rem] border border-gray-100 bg-white p-3 shadow-premium animate-page-flip">
+    <div key={`grid-${currentMonth.toISOString()}`} className="overflow-hidden rounded-[1.5rem] border border-black/10 bg-white/60 backdrop-blur-md p-3 shadow-2xl animate-page-flip">
       <div className="mb-2 grid grid-cols-7 gap-1 text-center text-[0.65rem] font-bold uppercase tracking-[0.2em] text-gray-400 font-heading">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((dayName) => (
           <div key={dayName} className="py-2">

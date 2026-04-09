@@ -42,22 +42,22 @@ export default function DayCell({
       className={[
         "group relative min-h-[70px] rounded-[1.2rem] border px-2 py-2 text-left transition-all duration-300 ease-out sm:min-h-[84px] lg:min-h-[72px] sm:px-3",
         isCurrentMonth
-          ? "border-gray-50 bg-white"
-          : "border-transparent bg-gray-50/50 text-gray-400",
+          ? "border-white/30 bg-white/20 backdrop-blur-sm hover:bg-white/40"
+          : "border-transparent text-gray-400/50 opacity-40",
         isRangeDay && !isRangeStart && !isRangeEnd
-          ? "!bg-blue-100/90 !border-blue-200 !text-blue-900 z-0"
+          ? "!bg-[var(--accent)]/15 !border-[var(--accent)]/20 !text-[var(--ink)] z-0"
           : "",
         isRangeStart || isRangeEnd
-          ? "!bg-gray-900 !border-gray-900 !text-white shadow-lg z-10 scale-[1.03]"
+          ? "!bg-gray-900 !border-gray-900 !text-white shadow-2xl z-10 scale-[1.05]"
           : "",
         isToday(day) && !(isRangeDay)
-          ? "border-blue-500 ring-1 ring-blue-100 bg-blue-50/30"
+          ? "ring-2 ring-white/60 bg-white/40 shadow-xl"
           : "",
         isActive && !(isRangeDay) && !(isRangeStart || isRangeEnd)
-          ? "border-gray-200 bg-gray-50 shadow-sm"
+          ? "border-white/60 bg-white/50 shadow-md"
           : "",
-        "hover:border-gray-300 hover:shadow-subtle hover:z-20",
-        "focus:outline-none focus:ring-1 focus:ring-gray-300",
+        "hover:shadow-premium hover:z-20",
+        "focus:outline-none focus:ring-2 focus:ring-white/50",
       ].join(" ")}
     >
       <div className="relative z-10 flex items-start justify-between">

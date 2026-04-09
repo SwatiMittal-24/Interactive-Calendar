@@ -106,16 +106,27 @@ export default function Calendar() {
           "--shell-border": theme.shellBorder,
           "--ring": theme.ring,
           "--ring-shadow": theme.ringShadow,
-          backgroundColor: theme.accentMuted,
-          borderColor: theme.accentSoft,
+          backgroundColor: theme.accentMuted + "80", // 50% opacity
+          borderColor: "rgba(0,0,0,0.12)",
+          backdropFilter: "blur(20px)",
+          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
         }}
       >
-        <div className="pointer-events-none absolute left-8 right-8 top-0 hidden h-12 items-start justify-center gap-8 xl:flex z-20">
-          {[0, 1, 2].map((ring) => (
-            <div key={ring} className="relative h-12 w-14">
+        <div className="pointer-events-none absolute left-0 right-0 top-0 hidden h-12 items-start justify-center gap-12 xl:flex z-50">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="relative h-14 w-8">
+              {/* The metal ring */}
               <div
-                className="absolute left-1/2 top-0 h-10 w-5 -translate-x-1/2 rounded-b-full border-x-[3px] border-b-[3px]"
-                style={{ borderColor: "rgba(0,0,0,0.1)" }}
+                className="absolute left-1/2 top-[-10px] h-16 w-full -translate-x-1/2 rounded-full border-[4px] shadow-lg"
+                style={{ 
+                  borderColor: "#d1d5db",
+                  background: "linear-gradient(to right, #9ca3af, #f3f4f6, #9ca3af)",
+                  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+                }}
+              />
+              {/* The shadow cast by the ring on the "paper" */}
+              <div 
+                className="absolute left-1/2 top-4 h-12 w-1 -translate-x-1/2 bg-black/10 blur-[2px] rounded-full"
               />
             </div>
           ))}
@@ -126,8 +137,8 @@ export default function Calendar() {
           <section
             className="relative overflow-hidden rounded-[2rem] border text-white flex flex-col lg:h-full shadow-subtle"
             style={{
-              borderColor: theme.accentSoft,
-              backgroundColor: theme.heroGradient,
+              borderColor: "rgba(0,0,0,0.1)",
+              background: theme.heroGradient,
             }}
           >
             <img
@@ -150,11 +161,13 @@ export default function Calendar() {
           </section>
 
           {/* Column 2: Calendar Grid */}
-          <section 
+          <section
             className="flex flex-col gap-4 rounded-[2rem] border p-4 lg:h-full lg:overflow-hidden lg:justify-center shadow-subtle transition-colors duration-500"
             style={{
-              backgroundColor: theme.paper,
-              borderColor: theme.accentSoft,
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
+              borderColor: "rgba(0,0,0,0.1)",
+              backdropFilter: "blur(12px)",
+              boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
             }}
           >
             <CalendarHeader
@@ -180,11 +193,13 @@ export default function Calendar() {
           </section>
 
           {/* Column 3: Notes Side Panel (Laptops only) */}
-          <section 
+          <section
             className="hidden lg:block lg:h-full lg:overflow-auto pr-1 p-2 rounded-[2rem] border shadow-subtle transition-colors duration-500"
             style={{
-              backgroundColor: theme.paper,
-              borderColor: theme.accentSoft,
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              borderColor: "rgba(0,0,0,0.1)",
+              backdropFilter: "blur(8px)",
+              boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
             }}
           >
             <DetailPanel

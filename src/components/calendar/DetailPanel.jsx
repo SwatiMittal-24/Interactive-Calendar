@@ -63,60 +63,60 @@ export default function DetailPanel({
     }));
   };
 
-  const gridClass = isSidePanel 
-    ? "flex flex-col gap-4 h-full" 
+  const gridClass = isSidePanel
+    ? "flex flex-col gap-4 h-full"
     : "grid gap-6 xl:grid-cols-[1fr_1fr] mt-2";
 
   return (
     <section className={gridClass + " " + wrapperClassName}>
-      <div className={`flex flex-col rounded-[1.5rem] border border-gray-100 bg-white p-5 shadow-subtle transition-all duration-300 hover:shadow-premium ${isSidePanel ? 'flex-1' : ''}`}>
-        <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-lg font-bold tracking-tight text-gray-900 font-heading">
+      <div className={`flex flex-col rounded-[2rem] border border-black/10 bg-white/40 backdrop-blur-md p-6 shadow-xl transition-all duration-500 hover:bg-white/60 hover:shadow-premium ${isSidePanel ? 'flex-1' : ''}`}>
+        <div className="mb-6 flex items-center justify-between">
+          <h3 className="text-xl font-light tracking-tight text-gray-900 font-heading">
             {format(currentMonth, "MMMM")} Memos
           </h3>
-          <span className="rounded-full bg-gray-50 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-widest text-gray-400">
-            Pinned
+          <span className="rounded-full bg-black/5 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-gray-500">
+            Monthly
           </span>
         </div>
         <textarea
           value={monthMemo}
           onChange={(event) => updateMonthMemo(event.target.value)}
-          placeholder="Monthly goals..."
-          className="w-full flex-1 resize-none rounded-xl bg-gray-50/50 p-4 text-[0.85rem] leading-relaxed text-gray-700 outline-none transition focus:bg-white focus:ring-1 focus:ring-gray-200 placeholder:text-gray-400"
+          placeholder="What are your goals for this month?"
+          className="w-full flex-1 resize-none rounded-2xl bg-black/5 p-5 text-[0.9rem] leading-relaxed text-gray-700 outline-none transition focus:bg-white/80 focus:ring-1 focus:ring-white/50 placeholder:text-gray-400 font-sans"
         />
       </div>
 
-      <div className={`flex flex-col rounded-[1.5rem] border border-gray-100 bg-white p-5 shadow-subtle transition-all duration-300 hover:shadow-premium ${isSidePanel ? 'flex-[1.5]' : ''}`}>
-        <div className="mb-4 flex flex-col gap-2">
-          <h3 className="text-lg font-bold tracking-tight text-gray-900 font-heading">
-            {startDate ? getRangeLabel(startDate, endDate) : "Selection Details"}
+      <div className={`flex flex-col rounded-[2rem] border border-black/10 bg-white/30 backdrop-blur-md p-6 shadow-xl transition-all duration-500 hover:bg-white/50 hover:shadow-premium ${isSidePanel ? 'flex-[1.5]' : ''}`}>
+        <div className="mb-6 flex flex-col gap-3">
+          <h3 className="text-xl font-light tracking-tight text-gray-900 font-heading leading-tight">
+            {startDate ? getRangeLabel(startDate, endDate) : "Selection Insights"}
           </h3>
           <div className="flex gap-2">
-            <span className="rounded-full bg-blue-50 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-widest text-blue-600">
-              {rangeDays ? `${rangeDays} Day${rangeDays > 1 ? "s" : ""}` : "0 Days"}
+            <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-widest text-[var(--accent)]">
+              {rangeDays ? `${rangeDays} Day${rangeDays > 1 ? "s" : ""}` : "Planning..."}
             </span>
             {activeDate && (
-              <span className="rounded-full bg-purple-50 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-widest text-purple-600">
+              <span className="rounded-full bg-black/5 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-widest text-gray-600">
                 {format(activeDate, "MMM d")}
               </span>
             )}
           </div>
         </div>
 
-        <div className="flex flex-1 flex-col gap-3">
+        <div className="flex flex-1 flex-col gap-4">
           <textarea
             value={dayNote}
             onChange={(event) => updateDayNote(event.target.value)}
-            placeholder={activeDate ? `Notes for ${format(activeDate, "MMM d")}...` : "Select a day..."}
+            placeholder={activeDate ? `Detailed notes for ${format(activeDate, "MMM d")}...` : "Select a day to begin..."}
             disabled={!activeDate}
-            className="w-full flex-1 resize-none rounded-xl bg-gray-50/50 p-4 text-[0.85rem] leading-relaxed text-gray-700 outline-none transition disabled:opacity-40 focus:bg-white focus:ring-1 focus:ring-gray-200 placeholder:text-gray-400"
+            className="w-full flex-1 resize-none rounded-2xl bg-black/5 p-5 text-[0.9rem] leading-relaxed text-gray-700 outline-none transition disabled:opacity-30 focus:bg-white/80 focus:ring-1 focus:ring-white/50 placeholder:text-gray-400 font-sans"
           />
           <textarea
             value={selectionNote}
             onChange={(event) => updateSelectionNote(event.target.value)}
-            placeholder={startDate ? `Range notes...` : "Select range..."}
+            placeholder={startDate ? `Strategic notes for this range...` : "Select a range to capture insights..."}
             disabled={!startDate}
-            className="w-full flex-1 resize-none rounded-xl bg-gray-50/50 p-4 text-[0.85rem] leading-relaxed text-gray-700 outline-none transition disabled:opacity-40 focus:bg-white focus:ring-1 focus:ring-gray-200 placeholder:text-gray-400"
+            className="w-full h-32 resize-none rounded-2xl bg-black/5 p-5 text-[0.9rem] leading-relaxed text-gray-700 outline-none transition disabled:opacity-30 focus:bg-white/80 focus:ring-1 focus:ring-white/50 placeholder:text-gray-400 font-sans"
           />
         </div>
       </div>
