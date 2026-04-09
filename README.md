@@ -93,12 +93,4 @@ Utilizes React's latest features to ensure minimal re-renders during date select
 
 ---
 
-## 🔮 Future Enhancements
-
-*   **Multi-Calendar Support**: Ability to create and switch between multiple planners (e.g., Work vs. Personal).
-*   **Export to PDF**: Generate a high-resolution, printable version of your monthly wall calendar.
-*   **Calendar Sync**: Optional integration with Google Calendar or Outlook APIs.
-*   **Collaborative Planning**: Real-time shared calendars using WebSockets or a backend sync layer.
-
-
 *Show your support by giving this project a ⭐ if you like it!*
