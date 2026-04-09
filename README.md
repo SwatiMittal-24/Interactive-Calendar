@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wall Calendar Planner
 
-## Getting Started
+Bringing the timeless utility of a physical wall calendar to the modern digital workspace.
 
-First, run the development server:
+---
 
+## 🔗 Demo Links
+
+*   **Live Demo**: [View Live Project](https://example-demo-link.com) *(Update with your link)*
+*   **Video Walkthrough**: [Watch Demo Video](https://youtube.com/example) *(Update with your link)*
+
+---
+
+## ✨ Features
+
+*   **Analog Aesthetic, Digital Precision**: A handcrafted UI inspired by premium physical calendars, featuring rich seasonal themes and high-quality photography.
+*   **Intuitive Range Selection**: Effortlessly select date ranges with a fluid click-and-drag-inspired interaction model, perfect for planning trips, projects, or goals.
+*   **Integrated Note Management**: Contextual notes for specific dates or ranges, allowing you to bridge the gap between "when" and "what."
+*   **Persistent Planner**: Automatic client-side persistence using `localStorage`. Your plans remain intact across sessions without requiring a backend.
+*   **Dynamic Seasonal Themes**: 12 distinct, curated color palettes that transition automatically based on the month, providing a delightful and varied user experience.
+*   **Premium Interactions**: Smooth CSS-driven animations (blur-in hero images, slide-up text) and frosted glass effects for a state-of-the-art feel.
+
+---
+
+## 🎨 UI/UX Highlights
+
+*   **Wall Calendar Inspiration**: Designed to evoke the feeling of flipping through a physical planner, with a prominent "hero" section for each month.
+*   **Responsiveness First**: A dual-layout strategy.
+    *   **Desktop**: A panoramic "Wall View" that utilizes the full width of the screen with a dedicated notes side panel.
+    *   **Mobile**: A condensed, scroll-optimized view that maintains luxury aesthetics on smaller screens.
+*   **Focus on Usability**: Clean typography (Inter font) and intentional whitespace ensure that your plans are always the main focus.
+
+---
+
+## 🛠 Tech Stack
+
+*   **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+*   **Language**: JavaScript / React 19
+*   **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) & Vanilla CSS
+*   **Date Utility**: [date-fns](https://date-fns.org/)
+*   **State Management**: React Hooks (useState, useEffect)
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally:
+
+### 1. Prerequisites
+Ensure you have [Node.js](https://nodejs.org/) installed (v18.x or higher recommended).
+
+### 2. Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/wall-calendar-planner.git
+cd wall-calendar-planner/assgn
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Run Locally
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:3006`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```text
+src/
+├── app/            # Next.js App Router (Layouts and Pages)
+├── components/     # Reusable UI Components
+│   └── calendar/   # Core Calendar logic, Grid, and Detail panels
+├── lib/            # Utility functions and configuration
+│   ├── monthThemes.js  # Curated seasonal design tokens
+│   ├── monthImages.js  # High-res photography assets
+│   └── dateUtils.js    # Date processing helpers
+└── styles/         # Global styles and Tailwind configuration
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 Key Implementation Details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **Range Selection Logic**
+The calendar uses a custom state machine to handle start/end date selection. It intelligently calculates the range highlights in real-time as the user hovers over the grid, providing immediate visual feedback.
 
-## Deploy on Vercel
+### **State-Driven Theming**
+Instead of static styles, the entire UI is derived from a `monthThemes` configuration. Changing a month triggers a global CSS variable update, seamlessly transitioning the "paper," "ink," and "accent" colors.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **Optimized Rendering**
+Utilizes React's latest features to ensure minimal re-renders during date selection. The `DetailPanel` and `CalendarGrid` are decoupled to allow independent updates.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🔮 Future Enhancements
+
+*   **Multi-Calendar Support**: Ability to create and switch between multiple planners (e.g., Work vs. Personal).
+*   **Export to PDF**: Generate a high-resolution, printable version of your monthly wall calendar.
+*   **Calendar Sync**: Optional integration with Google Calendar or Outlook APIs.
+*   **Collaborative Planning**: Real-time shared calendars using WebSockets or a backend sync layer.
+
+---
+
+## 📸 Screenshots
+
+| Desktop View | Mobile View |
+| :---: | :---: |
+| ![Desktop Placeholder](https://via.placeholder.com/800x450?text=Desktop+Calendar+View) | ![Mobile Placeholder](https://via.placeholder.com/200x400?text=Mobile+Calendar+View) |
+
+---
+
+## 🧔 Author
+
+**Your Name**
+*   LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+*   GitHub: [@yourusername](https://github.com/yourusername)
+*   Portfolio: [yourportfolio.com](https://yourportfolio.com)
+
+---
+
+*Show your support by giving this project a ⭐ if you like it!*

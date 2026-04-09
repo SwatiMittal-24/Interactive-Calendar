@@ -1,0 +1,9 @@
+import Calendar from "@/components/calendar/Calendar";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen px-4 py-6 sm:px-6 lg:px-10">
+      <Calendar />
+    </main>
+  );
+}
