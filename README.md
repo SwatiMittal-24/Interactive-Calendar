@@ -51,7 +51,7 @@ Ensure you have [Node.js](https://nodejs.org/) installed (v18.x or higher recomm
 
 ### 2. Installation
 ```bash
-git clone https://github.com/your-username/wall-calendar-planner.git
+git clone https://github.com/SwatiMittal-24/Interactive-Calendar.git
 cd wall-calendar-planner/assgn
 npm install
 ```
@@ -100,23 +100,5 @@ Utilizes React's latest features to ensure minimal re-renders during date select
 *   **Calendar Sync**: Optional integration with Google Calendar or Outlook APIs.
 *   **Collaborative Planning**: Real-time shared calendars using WebSockets or a backend sync layer.
 
----
-
-## 📸 Screenshots
-
-| Desktop View | Mobile View |
-| :---: | :---: |
-| ![Desktop Placeholder](https://via.placeholder.com/800x450?text=Desktop+Calendar+View) | ![Mobile Placeholder](https://via.placeholder.com/200x400?text=Mobile+Calendar+View) |
-
----
-
-## 🧔 Author
-
-**Your Name**
-*   LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-*   GitHub: [@yourusername](https://github.com/yourusername)
-*   Portfolio: [yourportfolio.com](https://yourportfolio.com)
-
----
 
 *Show your support by giving this project a ⭐ if you like it!*
